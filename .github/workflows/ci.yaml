@@ -1,0 +1,30 @@
+name: Continuous Integration
+on: push
+
+jobs:
+  syntax-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Code formatting using Ruff
+        uses: chartboost/ruff-action@v1 # https://github.com/chartboost/ruff-action
+        with:
+          args: format --check
+
+      - name: Code linting using Ruff
+        uses: chartboost/ruff-action@v1
+
+  unit-testing:
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+    runs-on: ubuntu-latest
+    container:
+      image: python:${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python dependencies
+        run: pip install .[dev,test]
+      - name: Run tests using Pytest
+        run: python -m pytest tests/

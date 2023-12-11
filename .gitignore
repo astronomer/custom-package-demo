@@ -1,0 +1,7 @@
+*.egg-info/
+*.pyc
+.DS_Store
+.idea/
+.python-version
+__pycache__/
+dist/
