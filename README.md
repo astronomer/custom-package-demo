@@ -1,9 +1,8 @@
 # Custom package demo
 
-```
-THIS REPOSITORY SERVES AS A DEMO FOR HOW TO STRUCTURE A CUSTOM PACKAGE.
-FEEL FREE TO COPY AND ADJUST TO YOUR OWN NEEDS.
-```
+> [!IMPORTANT]  
+> This repository serves as a demo for how to structure a custom package.
+> Feel free to copy and adjust to your own needs.
 
 This Python library hosts custom Airflow Operators, Sensors, Notifiers, etc. that are common across **[insert company name]** data teams. This guide will walk you through how this library works, how to use it in your project, making changes, running tests, and contributing your changes.
 
